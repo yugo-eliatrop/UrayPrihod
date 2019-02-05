@@ -14,4 +14,8 @@
  *= require_self
  *= require trix
  */
- @import "bootstrap";
+@import "bootstrap";
+
+body {
+  border: none;
+}
