@@ -61,6 +61,8 @@ $main-font: 'Montserrat', sans-serif;
     border: 1px solid $light-blue;
     padding: 3px;
     border-radius: 3px;
+    max-width: 100%;
+    height: auto;
   }
 
   .first-image {
