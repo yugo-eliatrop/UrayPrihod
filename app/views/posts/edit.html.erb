@@ -1,0 +1,26 @@
+<%= render 'shared/nav' %>
+<div class="empty-top"></div>
+
+<div class="container admin-panel">
+  <div class="row">
+    <div class="col-md-6">
+      <%= link_to 'Назад', post_path(@post), class: 'button' %>
+    </div>
+    <div class="col-md-6">
+      <% if user_signed_in? %>
+        <%= link_to 'Удалить', post_path(@post), method: :delete, class: 'button button-silver',
+                                                 data: { confirm: 'Are you sure?' }%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

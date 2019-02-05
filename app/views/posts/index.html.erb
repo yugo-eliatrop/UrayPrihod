@@ -1,0 +1,18 @@
+<%= render 'shared/nav' %>
+<div class="empty-top"></div>
+
+<% if user_signed_in? %>
+  <div class="container admin-panel">
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to '+ Добавить новую статью', new_post_path, class: 'button' %>
+      </div>
+      <div class="col-md-6">
+        <p>Для редактирования / изменения откройте статью</p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render 'shared/posts' %>
+<%= render 'shared/footer' %>

@@ -1,0 +1,26 @@
+@import "./variables";
+
+.footer {
+  background: $dark-blue;
+  color: white;
+
+  a {
+    color: white;
+  }
+
+  .top {
+    height: 50px;
+    border-bottom: 1px solid $blue-border;
+    margin: 0 -15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .address, .links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0 10px 30%;
+  }
+}

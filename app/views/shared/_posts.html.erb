@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row title">
+    <h2>Новости</h2>
+  </div>
+  <div class="row news-block">
+    <% @posts.each do |post|%>
+      <div class="col-lg-6 about-post">
+        <div class="image">
+          <% if post.image? %>
+            <%= image_tag(post.image.url, alt: 'image') %>
+          <% else %>
+            <%= image_tag('http://placehold.it/450x300', alt: 'image') %>
+          <% end %>
+        </div>
+        <div class="description">
+          <h2><%= link_to post.title, post_path(post) %></h2>
+          <time><%= post.created_at.to_date.strftime("%d %B %Y") %></time>
+          <p><%= post.description.html_safe %></p>
+          <div class="button-wrapper">
+            <%= link_to "Читать", post_path(post), class: "button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

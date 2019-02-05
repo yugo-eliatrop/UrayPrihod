@@ -1,0 +1,65 @@
+@import "./variables";
+
+.admin-panel {
+  border-top: 1px solid $dark-blue;
+  border-bottom: 1px solid $dark-blue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  p {
+    margin: 0;
+  }
+
+  .col-md-6 {
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.post {
+
+  img {
+    border: 1px solid $light-blue;
+    padding: 3px;
+    border-radius: 3px;
+  }
+
+  .first-image {
+    padding-top: 10px;
+  }
+
+  .text {
+    text-align: justify;
+    
+    figure {
+      text-align: center;
+    }
+  }
+}
+
+form {
+  margin: 30px 0;
+
+  .block {
+    border-bottom: 1px solid $gray-text;
+    border-top: 1px solid $gray-text;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    padding: 5px;
+
+    input, textarea {
+      width: 100%;
+      background: white;
+    }
+
+    trix-editor {
+      background: white;
+    }
+  }
+}

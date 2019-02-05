@@ -1,0 +1,35 @@
+<%= form_for @post do |form| %>
+  <%= render 'shared/errors', object: @post %>
+
+  <div class="block">
+    <strong>Название статьи: </strong>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="block">
+    <strong>Изображение превью</strong>
+    <% if @post.image? || @post.image_cache %>
+      <p>Файл загружен</p>
+      <%= label_tag :remove_image do %>
+        Удалить <%= form.check_box :remove_image %>
+      <% end %>
+      <br><strong>Для замены картинки: </strong>
+    <% else %>
+      <strong> для новости (не обязательно): </strong>
+    <% end %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+
+  <div class="block">
+    <p><strong>Описание</strong> (показывается только превью статьи, <strong>максимальная длина 200 символов</strong>)</p>
+    <%= form.trix_editor :description, class: 'editor' %>
+  </div>
+
+  <div class="block">
+    <strong>Текст статьи</strong>
+    <%= form.trix_editor :content, class: 'editor' %>
+  </div>
+
+  <%= form.submit 'Применить изменения' %>
+<% end %>

@@ -1,0 +1,104 @@
+@import "./variables";
+
+@media screen and (min-width:1200px) {
+  .h-lg {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+  .h-md {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+  .h-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:320px) and (max-width:767px) {
+  .h-xs {
+    display: none !important;
+  }
+  .big-component, .component {
+    width: 100% !important;
+    padding: 0 15px;
+  }
+  .first-screen .picture .content h1 {
+    font-size: 36px;
+    padding: 0 10px;
+  }
+  .news-block {
+
+    .about-post {
+
+      .image {
+        display: flex;
+        justify-content: center;
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      .description {
+        width: 95%;
+      }
+    }
+  }
+  .calendar {
+
+    .azbyka-saints {
+
+      .top {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+  #parallax-img {
+    width: auto;
+    height: 100%;
+  }
+  .contacts {
+
+    .address {
+      display: block !important;
+    }
+  }
+  .footer {
+
+    .top {
+      flex-direction: column;
+    }
+
+    .address, .links {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  .admin-panel {
+
+    .col-md-6 {
+      flex-direction: column;
+
+      &:last-child {
+        padding-top: 5px;
+      }
+
+      .button {
+        width: 100%;
+        margin: 0;
+
+        &-silver {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<%= render 'shared/nav' %>
+<div class="first-screen">
+  <div class="picture">
+    <%= image_tag('/uploads/picture/f_screen.png', alt: 'wall') %>
+    <div class="content">
+      <h1>храм рождества<br>пресвятой Богородицы</h1>
+      <p>г. Урай, Югорская епархия<br>Русской Православной Церкви</p>
+    </div>
+  </div>
+</div>
+<div>
+  <%= render 'shared/posts' %>
+</div>
+<div class="calendar">
+  <div class="azbyka-saints component"></div>
+</div>
+<script async="async">printCalendar()</script>
+<div id="parallax">
+  <%= image_tag('/uploads/picture/f_screen.png', alt: 'wall', id: 'parallax-img') %>
+  <div class="content">
+    <h2 class="reverse">О храме</h2>
+    <div class="about component">
+      <div class="info">
+        <p>Здесь какая-нибудь интересующая информация.</p>
+        <p>Службы проводятся тогда-то и тогда-то.</p>
+        <p>Совершаются требы такие-то и такие-то.</p>
+      </div>
+      <button class="button">расписание</button>
+    </div>
+  </div>
+</div>
+<div class="contacts">
+  <div class="component">
+    <h2>Контакты</h2>
+    <div class="address">
+      <p><i class="fas fa-home"></i> г. Урай, ул. Яковлева</p>
+      <p><i class="fas fa-phone-square"></i> 8-111-111-11-11</p>
+      <p><i class="fab fa-vk"></i> Мы <a href="">Вконтакте</a></p>
+      <p><i class="fas fa-envelope"></i> example@mail.com</p>
+    </div>
+  </div>
+  <div class="question">
+    <p class="reverse">Также здесь Вы можете <strong>задать вопрос священнику</strong></p>
+    <button class="button"><i class="fas fa-caret-square-right"></i></button>
+  </div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7949.195956299897!2d64.8001849!3d60.1261124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x13ae939691ec8e5d!2z0KXRgNCw0Lwg0KDQvtC20LTQtdGB0YLQstCwINCf0YDQtdGB0LLRj9GC0L7QuSDQkdC-0LPQvtGA0L7QtNC40YbRiw!5e0!3m2!1sru!2sru!4v1549067654188" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+<%= render 'shared/footer' %>
