@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  skip_before_action :set_global_contact
   before_action :authenticate_user!
   before_action :set_contact, only: %i[index update]
 

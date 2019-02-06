@@ -33,10 +33,10 @@
   <div class="component">
     <h2>Контакты</h2>
     <div class="address">
-      <p><i class="fas fa-home"></i> г. Урай, ул. Яковлева</p>
-      <p><i class="fas fa-phone-square"></i> 8-111-111-11-11</p>
-      <p><i class="fab fa-vk"></i> Мы <a href="">Вконтакте</a></p>
-      <p><i class="fas fa-envelope"></i> example@mail.com</p>
+      <p><i class="fas fa-home"></i><%= @contact.small_address %></p>
+      <p><i class="fas fa-phone-square"></i><%= @contact.phone %></p>
+      <p><i class="fab fa-vk"></i> Мы <%= link_to 'Вконтакте', "http://#{@contact.vk_link}" %></p>
+      <p><i class="fas fa-envelope"></i><%= @contact.email %></p>
     </div>
   </div>
   <div class="question">

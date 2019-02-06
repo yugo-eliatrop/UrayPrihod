@@ -1,3 +1,11 @@
 class ApplicationController < ActionController::Base
+  before_action :set_global_contact
+
   protect_from_forgery prepend: true
+
+  private
+
+  def set_global_contact
+    @contact = Contact.first
+  end
 end
