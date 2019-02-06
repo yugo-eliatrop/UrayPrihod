@@ -1,15 +1,10 @@
-<div class="navbar">
+<nav class="navbar">
   <div class="navbar-container big-component">
     <div class="logo">
       <%= image_tag('/uploads/picture/logo.png', alt: 'cross') %>
     </div>
     <div class="menu h-sm h-xs">
-      <div><%= link_to "Главная", root_path %></div>
-      <div><%= link_to "Новости", posts_path %></div>
-      <div><%= link_to "О храме"%> </div>
-      <div><%= link_to "Вопросы"%></div>
-      <div><%= link_to "Расписание" %></div>
-      <div><%= link_to "Помощь храму", help_index_path %></div>
+      <%= render 'shared/menu' %>
     </div>
     <div class="buttons h-sm h-xs">
       <% if user_signed_in? %>
@@ -26,12 +21,7 @@
   </div>
 </div>
 <div class="h-md h-lg" id="mobile-menu">
-  <div><%= link_to "Главная", root_path %></div>
-  <div><%= link_to "Новости", posts_path %></div>
-  <div><%= link_to "О храме"%></div>
-  <div><%= link_to "Вопросы"%></div>
-  <div><%= link_to "Расписание" %></div>
-  <div><%= link_to "Помощь храму" %></div>
+  <%= render 'shared/menu' %>
   <div class="buttons">
     <% if user_signed_in? %>
       <%= link_to "Выход", destroy_user_session_path, method: :delete, class: 'button button-gold' %>
@@ -40,4 +30,4 @@
       <%#= link_to "Регистрация", new_user_registration_path, class: 'button button-silver' %>
     <% end %>
   </div>
-</div>
+</nav>
