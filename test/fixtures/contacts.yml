@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vk_link: MyString
+  email: MyString
+  phone: MyString
+  address: MyString
+  small_address: MyString
+  requisite: MyText
+
+two:
+  vk_link: MyString
+  email: MyString
+  phone: MyString
+  address: MyString
+  small_address: MyString
+  requisite: MyText

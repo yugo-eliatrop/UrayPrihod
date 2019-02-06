@@ -1,0 +1,35 @@
+<%= form_for @contact do |form| %>
+  <%= render 'shared/errors', object: @contact %>
+
+  <div class="block">
+    <strong>Ссылка ВК: </strong>
+    <%= form.text_field :vk_link %>
+  </div>
+
+  <div class="block">
+    <strong>E-mail: </strong>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="block">
+    <strong>Телефон: </strong>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="block">
+    <strong>Полный адрес: </strong>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="block">
+    <strong>Короткий адрес: </strong>
+    <%= form.text_field :small_address %>
+  </div>
+
+  <div class="block">
+    <strong>Реквизиты: </strong>
+    <%= form.trix_editor :requisite, class: 'editor' %>
+  </div>
+
+  <%= form.submit 'Применить изменения' %>
+<% end %>
