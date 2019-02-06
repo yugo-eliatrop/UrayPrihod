@@ -6,7 +6,10 @@
   <div><%= link_to "Новости", posts_path %></div>
 <% end %>
 
-<div><%= link_to "О храме"%> </div>
+<% unless current_page?(controller: 'about') %>
+  <div><%= link_to "О храме", about_path %></div>
+<% end %>
+
 <div><%= link_to "Вопросы"%></div>
 <div><%= link_to "Расписание" %></div>
 

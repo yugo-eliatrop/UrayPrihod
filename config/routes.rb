@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get '/about' => 'about#index'
+  get '/holiday' => 'about#holiday'
+  get '/history' => 'about#history'
+
+  namespace :about do
+    resources :priests, except: :show
+  end
+  
   get 'help/index'
   devise_for :users
   get 'welcome/index'

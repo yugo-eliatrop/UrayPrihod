@@ -1,0 +1,28 @@
+<%= render 'shared/nav' %>
+<div class="empty-top"></div>
+
+<h2 class="title">О храме</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 about-temple">
+      <p>Здесь какая-нибудь интересующая информация.</p>
+      <p>Службы проводятся тогда-то и тогда-то.</p>
+      <p>Совершаются требы такие-то и такие-то.</p>
+      <button class="button">расписание</button>
+    </div>
+  </div>
+  <div class="row about-links">
+    <div class="col-md-3 about-link">
+      <%= link_to 'История храма', history_path, class: 'button' %>
+    </div>
+    <div class="col-md-6 about-link">
+      <%= link_to 'О Рождестве Пресвятой Богородицы', holiday_path, class: 'button' %>
+    </div>
+    <div class="col-md-3 about-link">
+      <%= link_to 'Священники', about_path, class: 'button' %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
