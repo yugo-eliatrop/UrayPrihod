@@ -14,7 +14,7 @@
   <div><%= link_to "Помощь храму", help_index_path %></div>
 <% end %>
 
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.admin %>
   <% unless current_page?(controller: 'contacts') %>
     <div><%= link_to "Админ", contacts_path %></div>
   <% end %>

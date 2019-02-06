@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
   skip_before_action :set_global_contact
   before_action :authenticate_user!
+  before_action :check_rights
   before_action :set_contact, only: %i[index update]
 
   def index
