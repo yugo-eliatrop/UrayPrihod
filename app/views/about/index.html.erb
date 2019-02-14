@@ -6,9 +6,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12 about-temple">
-      <p>Здесь какая-нибудь интересующая информация.</p>
-      <p>Службы проводятся тогда-то и тогда-то.</p>
-      <p>Совершаются требы такие-то и такие-то.</p>
+      <div><%= @text.content %></div>
       <button class="button">расписание</button>
     </div>
   </div>
@@ -20,7 +18,7 @@
       <%= link_to 'О Рождестве Пресвятой Богородицы', holiday_path, class: 'button' %>
     </div>
     <div class="col-md-3 about-link">
-      <%= link_to 'Священники', about_path, class: 'button' %>
+      <%= link_to 'Духовенство', about_path, class: 'button' %>
     </div>
   </div>
 </div>

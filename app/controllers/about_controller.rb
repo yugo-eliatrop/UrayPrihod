@@ -1,7 +1,13 @@
 class AboutController < ApplicationController
-  def index; end
+  def index
+    @text = Text.where(title: 'About').first
+  end
 
-  def holiday; end
+  def holiday
+    @text = Text.where(title: 'Holiday').first
+  end
 
-  def history; end
+  def history
+    @text = Text.where(title: 'History').first
+  end
 end
