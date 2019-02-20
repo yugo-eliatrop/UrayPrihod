@@ -42,4 +42,30 @@ class AdminController < ApplicationController
       render :edit_holiday
     end
   end
+
+  def edit_priests
+    @text = Text.where(title: 'Priests').first
+  end
+
+  def update_priests
+    @text = Text.where(title: 'Priests').first
+    if @text.update(params.require(:text).permit(:content))
+      redirect_to admin_path
+    else
+      render :edit_priests
+    end
+  end
+
+  def edit_schedule
+    @text = Text.where(title: 'Schedule').first
+  end
+
+  def update_schedule
+    @text = Text.where(title: 'Schedule').first
+    if @text.update(params.require(:text).permit(:content))
+      redirect_to admin_path
+    else
+      render :edit_schedule
+    end
+  end
 end

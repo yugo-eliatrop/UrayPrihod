@@ -1,0 +1,19 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="title">Духовенство</h3>
+      <%= form_for @text, :url => admin_priests_path, method: 'post' do |form| %>
+        <%= render 'shared/errors', object: @text %>
+        <div class="block">
+          <%= form.trix_editor :content, class: 'editor' %>
+        </div>
+        <%= form.submit 'Применить изменения' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

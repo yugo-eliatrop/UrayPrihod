@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-12 about-temple">
       <div><%= @text.content.html_safe %></div>
-      <button class="button">расписание</button>
+      <%= link_to 'Расписание', schedule_path, class: 'button' %>
     </div>
   </div>
   <div class="row about-links">
@@ -18,7 +18,7 @@
       <%= link_to 'О Рождестве Пресвятой Богородицы', holiday_path, class: 'button' %>
     </div>
     <div class="col-md-3 about-link">
-      <%= link_to 'Духовенство', about_path, class: 'button' %>
+      <%= link_to 'Духовенство', priests_path, class: 'button' %>
     </div>
   </div>
 </div>

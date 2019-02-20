@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/about' => 'about#index'
   get '/holiday' => 'about#holiday'
   get '/history' => 'about#history'
+  get '/priests' => 'about#priests'
+  get '/schedule' => 'about#schedule'
   get '/admin' => 'admin#index'
 
   get '/admin/holiday' => 'admin#edit_holiday'
@@ -15,11 +17,11 @@ Rails.application.routes.draw do
   post '/admin/history' => 'admin#update_history'
   get '/admin/sm_about' => 'admin#edit_sm_about'
   post '/admin/sm_about' => 'admin#update_sm_about'
+  get '/admin/priests' => 'admin#edit_priests'
+  post '/admin/priests' => 'admin#update_priests'
+  get '/admin/schedule' => 'admin#edit_schedule'
+  post '/admin/schedule' => 'admin#update_schedule'
 
-  namespace :about do
-    resources :priests, except: :show
-  end
-  
   resources :texts, only: [:show, :update]
   resources :posts
   resources :pictures, only: [:create, :destroy]
