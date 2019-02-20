@@ -1,0 +1,45 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<div class="container admin-panel">
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Контактная информация для сайта</h3>
+    </div>
+    <div class="col-md-6">
+      <%= link_to 'Редактировать', edit_contact_path(@contact), class: 'button' %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>История</h3>
+    </div>
+    <div class="col-md-6">
+      <%= link_to 'Редактировать', admin_history_path, class: 'button' %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>О храме (сокр)</h3>
+    </div>
+    <div class="col-md-6">
+      <%= link_to 'Редактировать', admin_sm_about_path, class: 'button' %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>О празднике</h3>
+    </div>
+    <div class="col-md-6">
+      <%= link_to 'Редактировать', admin_holiday_path, class: 'button' %>
+    </div>
+  </div>
+  <hr>
+</div>
+  
+
+<%= render 'shared/footer' %>
