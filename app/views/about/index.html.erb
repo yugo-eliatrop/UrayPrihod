@@ -4,12 +4,6 @@
 <h2 class="title">О храме</h2>
 
 <div class="container">
-  <div class="row">
-    <div class="col-12 about-temple">
-      <div><%= @text.content.html_safe %></div>
-      <%= link_to 'Расписание', schedule_path, class: 'button' %>
-    </div>
-  </div>
   <div class="row about-links">
     <div class="col-md-3 about-link">
       <%= link_to 'История храма', history_path, class: 'button' %>
