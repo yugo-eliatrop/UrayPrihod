@@ -16,6 +16,11 @@
   .h-sm {
     display: none !important;
   }
+  .navbar {
+    margin-top: 0;
+    background-color: rgba(0, 32, 63, .9);
+    color: white;
+  }
 }
 
 @media screen and (min-width:320px) and (max-width:767px) {

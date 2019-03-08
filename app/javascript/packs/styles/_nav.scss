@@ -11,7 +11,8 @@
   align-items: center;
   width: 100%;
   z-index: 1000;
-  margin-top: -80px;
+  top: 0;
+  box-shadow: 0 2px 2px $dark-blue;
 
   a {
     color: $dark-blue;
@@ -24,11 +25,15 @@
   &-container {
     padding: 0 15px;
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 100px 1fr 100px;
 
     .logo {
       display: flex;
       align-items: center;
+
+      img {
+        height: 54px;
+      }
     }
 
     .menu {
@@ -36,6 +41,7 @@
       justify-content: center;
       align-items: center;
       height: 100%;
+      font-weight: 600;
   
       div {
         padding: 0 10px;
