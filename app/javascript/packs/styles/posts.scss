@@ -1,5 +1,6 @@
 @import "./variables";
 
+
 .admin-panel {
   border-top: 1px solid $dark-blue;
   border-bottom: 1px solid $dark-blue;
@@ -28,10 +29,16 @@
     border: 1px solid $light-blue;
     padding: 3px;
     border-radius: 3px;
+    max-width: 100%;
+    height: auto;
   }
 
   .first-image {
     padding-top: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
   }
 
   .text {
@@ -39,6 +46,17 @@
     
     figure {
       text-align: center;
+      display: block;
+
+      figcaption {
+        display: none;
+      }
+    }
+
+    img {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
     }
   }
 }
