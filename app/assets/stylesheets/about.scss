@@ -30,5 +30,10 @@
 
   figure {
     text-align: center;
+    display: block;
+
+    figcaption {
+      display: none;
+    }
   }
 }
