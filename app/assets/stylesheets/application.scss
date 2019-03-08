@@ -69,15 +69,25 @@ $main-font: 'Montserrat', sans-serif;
     padding-top: 10px;
   }
 
+  h1 {
+    font-size: 1.8rem;
+  }
+
   .text {
     text-align: justify;
     
     figure {
       text-align: center;
+      display: block;
+
+      figcaption {
+        display: none;
+      }
     }
 
     img {
       max-width: 600px;
+      width: 100%;
       height: auto;
     }
   }
@@ -480,6 +490,10 @@ button.button, a.button {
   display: flex;
   justify-content: center;
   padding: 50px 0 30px 0;
+
+  a {
+    color: $dark-blue;
+  }
 }
 
 .news-block {
