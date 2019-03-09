@@ -14,6 +14,13 @@
       <div class="links">
         <p><a href="http://yugorsk-eparhia.ru/">Сайт Югорской епархии</a></p>
         <p><a href="http://www.patriarchia.ru/">Сайт Московского Патриархата</a></p>
+        <div>
+          <% if user_signed_in? %>
+            <%= link_to "Выход", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Вход", new_user_session_path %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

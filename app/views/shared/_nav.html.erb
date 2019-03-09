@@ -1,33 +1,19 @@
 <nav class="navbar">
-  <div class="navbar-container big-component">
-    <div class="logo">
-      <%= image_tag('/uploads/picture/logo.png', alt: 'cross') %>
-    </div>
+  <div class="navbar-container big-component h-sm h-xs">
     <div class="menu h-sm h-xs">
       <%= render 'shared/menu' %>
     </div>
-    <div class="buttons h-sm h-xs">
-      <% if user_signed_in? %>
-        <%= link_to "Выход", destroy_user_session_path, method: :delete, class: 'button button-gold' %>
-      <% else %>
-        <%= link_to "Вход", new_user_session_path, class: 'button button-gold' %>
-        <%#= link_to "Регистрация", new_user_registration_path, class: 'button button-silver' %>
-      <% end %>
+  </div>
+  <div class="navbar-container big-component h-lg h-md">
+    <div class="logo">
+      <%= image_tag('/uploads/picture/logo.png', alt: 'cross') %>
     </div>
     <div class="h-md h-lg"></div>
-    <div class="h-md h-lg buttons">
+    <div class="h-md h-lg">
       <button class="button button-gold" id="burger" onclick="showHideMenu()"><i class="fas fa-bars"></i></button>
     </div>
   </div>
 </div>
 <div class="h-md h-lg" id="mobile-menu">
   <%= render 'shared/menu' %>
-  <div class="buttons">
-    <% if user_signed_in? %>
-      <%= link_to "Выход", destroy_user_session_path, method: :delete, class: 'button button-gold' %>
-    <% else %>
-      <%= link_to "Вход", new_user_session_path, class: 'button button-gold' %>
-      <%#= link_to "Регистрация", new_user_registration_path, class: 'button button-silver' %>
-    <% end %>
-  </div>
 </nav>
