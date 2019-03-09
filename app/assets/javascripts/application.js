@@ -24,6 +24,22 @@ function showHideMenu() {
     menu.style.display = "none";
 }
 
+function setNavStyle() {
+  if (window.location.pathname == "/") {
+    let scrolled = window.pageYOffset || document.documentElement.scrollTop
+    let navbar = document.getElementById("navbar");
+
+    if (scrolled == 0) {
+      navbar.classList.remove("colored");
+      navbar.classList.add("glass");
+    }
+    else {
+      navbar.classList.remove("glass");
+      navbar.classList.add("colored");
+    }
+  }
+}
+
 function printCalendar() {
 
   window.___azcfg = { api: 'https://azbyka.ru/days/api', image: 1 };

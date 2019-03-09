@@ -1,5 +1,12 @@
-<nav class="navbar">
+<% if current_page?('/') %>
+<nav class="navbar glass" id="navbar">
+<% else %>
+<nav class="navbar colored" id="navbar">
+<% end %>
   <div class="navbar-container big-component h-sm h-xs">
+    <div class="logo">
+      <%= image_tag('/uploads/picture/logo.png', alt: 'cross') %>
+    </div>
     <div class="menu h-sm h-xs">
       <%= render 'shared/menu' %>
     </div>
