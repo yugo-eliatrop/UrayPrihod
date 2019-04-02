@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   post '/admin/priests' => 'admin#update_priests'
   get '/admin/schedule' => 'admin#edit_schedule'
   post '/admin/schedule' => 'admin#update_schedule'
+  get '/admin/announcement' => 'admin#edit_announcement'
+  post '/admin/announcement' => 'admin#update_announcement'
 
   resources :texts, only: [:show, :update]
   resources :posts

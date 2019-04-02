@@ -18,13 +18,28 @@
     <%= image_tag('/uploads/picture/f_screen3.jpg', alt: 'wall') %>
   </div>
 </div>
+
+<% if @announcement.content.length > 10 %>
+  <div class="container">
+    <div class="row title">
+      <h2>Объявления</h2>
+    </div>
+    <div class="calendar">
+      <%= @announcement.content.html_safe %>
+    </div>
+  </div>
+<% end %>
+
 <div>
   <%= render 'shared/posts' %>
 </div>
+
 <div class="calendar">
   <div class="azbyka-saints component"></div>
 </div>
+
 <script async="async">printCalendar()</script>
+
 <div id="parallax">
   <%= image_tag('/uploads/picture/f_screen.jpg', alt: 'wall', id: 'parallax-img') %>
   <div class="content">
@@ -33,6 +48,7 @@
     </div>
   </div>
 </div>
+
 <div class="contacts">
   <div class="component">
     <h2>Контакты</h2>
