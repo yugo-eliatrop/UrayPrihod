@@ -30,7 +30,9 @@
           <hr>
         <% end %>
       <% end %>
-      <%= link_to "Задать вопрос", new_question_path, class: 'button' %>
+      <% unless user_signed_in? && current_user.admin %>
+        <%= link_to "Задать вопрос", new_question_path, class: 'button' %>
+      <% end %>	
       <hr>
     </div>
   </div>
