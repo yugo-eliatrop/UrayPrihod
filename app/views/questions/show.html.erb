@@ -1,0 +1,36 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="title">Просмотр вопроса</h2>
+      <div class="block">
+        <p>Вопрос от <strong><%= @question.name %></strong></p>
+        <%= @question.question_text.html_safe %>
+      </div>
+      <hr>
+      <% if @question.answer_text.present? %>
+        <div class="block">
+          <p><strong>Ответ</strong></p>
+          <%= @question.answer_text.html_safe %>
+          <p><strong><%= User.find(@question.answerer_id).name %></strong></p>
+        </div>
+      <% else %>
+        <div class="block">
+          <p><strong>Вопрос успешно отправлен</strong></p>
+        </div>
+      <% end %>
+      <hr>
+      <%= link_to "Назад", questions_path, class: 'button' %>
+      <% if user_signed_in? && current_user.admin %>
+        <%= link_to 'Удалить', question_path(@question), method: :delete, class: 'button button-silver',
+                                                         data: { confirm: 'Удалить вопрос?' }%>
+        <%= link_to "Редактировать", edit_question_path(@question), class: 'button' %>
+      <% end %>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

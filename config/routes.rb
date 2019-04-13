@@ -25,8 +25,11 @@ Rails.application.routes.draw do
   post '/admin/announcement' => 'admin#update_announcement'
   post '/admin/update_name' => 'admin#update_name'
 
+  get 'questions/unanswered' => 'questions#unanswered'
+
   resources :texts, only: [:show, :update]
   resources :posts
   resources :pictures, only: [:create, :destroy]
   resources :contacts, except: [:destroy, :show]
+  resources :questions
 end

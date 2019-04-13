@@ -1,0 +1,24 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="title">Вопросы</h2>
+      <% if @unanswered.empty? %>
+        <h3 class="title">Нет неотвеченных вопросов</h3>
+      <% else %>
+        <% @unanswered.each do |q| %>
+          <%= q.question_text.html_safe %>
+          <i><%= q.name %></i>
+          <p><%= link_to "Открыть", edit_question_path(q), class: 'button' %></p>
+          <hr>
+        <% end %>
+      <% end %>
+      <%= link_to "Назад", questions_path, class: 'button' %>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

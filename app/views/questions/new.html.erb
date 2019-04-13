@@ -1,0 +1,32 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="title">Задать вопрос</h2>
+      <%= form_for @question do |form| %>
+        <%= render 'shared/errors', object: @question %>
+
+        <div class="block">
+          <strong>Ваше имя</strong>
+          <%= form.text_field :name %>
+        </div>
+
+        <div class="block">
+          <strong>Ваш email</strong>
+          <%= form.email_field :email %>
+        </div>
+
+        <div class="block">
+          <p><strong>Ваш вопрос</strong></p>
+          <%= form.trix_editor :question_text, class: 'editor' %>
+        </div>
+
+        <%= form.submit 'Отправить вопрос' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
