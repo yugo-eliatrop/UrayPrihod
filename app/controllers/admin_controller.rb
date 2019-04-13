@@ -2,7 +2,9 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :check_rights
 
-  def index; end
+  def index
+    @user = current_user
+  end
 
   def edit_sm_about
     @text = Text.find_by(title: 'About')
@@ -79,6 +81,15 @@ class AdminController < ApplicationController
       redirect_to admin_path
     else
       render :edit_announcement
+    end
+  end
+
+  def update_name
+    user = current_user
+    if user.update(name: params[:user][:name])
+      redirect_to admin_path
+    else
+      redirect_to edit_user_registration_path
     end
   end
 end
