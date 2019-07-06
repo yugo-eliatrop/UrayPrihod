@@ -43,6 +43,7 @@ gem 'file_validators'
 gem 'bootstrap', '~> 4.2.1'
 gem 'webpacker', '>= 4.0.x'
 gem 'pry', '~> 0.12.2'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -27,4 +27,23 @@
       </div>
     <% end %>
   </div>
+  <% if @page.present? && @page <= @last %>
+    <div class="page-select">
+      <% left = content_tag(:div, content_tag(:i, "", class: "fas fa-arrow-alt-circle-left"),
+         class: @page == 1 ? "disable" : "" ) %>
+      <% right = content_tag(:div, content_tag(:i, "", class: "fas fa-arrow-alt-circle-right"),
+         class: @page == @last ? "disable" : "" ) %>      
+      <%= link_to left, posts_path(page: 1), class: @page == 1 ? "disable" : "" %>
+      <div class="page-info">
+        <% if @page > 1 %>
+          <%= link_to @page - 1, posts_path(page: @page - 1) %>
+        <% end %>
+        <strong>Страница <%= @page %></strong>
+        <% if @page < @last %>
+          <%= link_to @page + 1, posts_path(page: @page + 1) %>
+        <% end %>
+      </div>
+      <%= link_to right, posts_path(page: @last), class: @page == @last ? "disable" : "" %>
+    </div>
+  <% end %>
 </div>

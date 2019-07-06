@@ -4,7 +4,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
+    per_page = 6
     @posts = Post.all.order('created_at DESC')
+                 .paginate(page: paginate_page, per_page: per_page)
+    @last = @posts.count / per_page + ((@posts.count % per_page).zero? ? 0 : 1)
   end
 
   def show; end
@@ -40,6 +43,20 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def paginate_page
+    @page =
+      if params[:page].nil?
+        1
+      else
+        params_page = params[:page].to_i
+        if params_page < 1
+          1
+        else
+          params_page
+        end
+      end
+  end
 
   def post_params
     params.require(:post).permit(:title, :description, :content,
