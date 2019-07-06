@@ -1,0 +1,41 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<h2 class="title">Вопросы</h2>
+
+<% if user_signed_in? && current_user.admin %>
+  <div class="container admin-panel">
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to 'Перейти к неотвеченным вопросам', questions_unanswered_path, class: 'button' %>
+      </div>
+      <div class="col-md-6">
+        <p>Всего неотвеченных вопросов: <strong><%= @unanswered.present? ? @unanswered.count : 0 %></strong></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% if @questions.empty? %>
+        <h3 class="title">Здесь еще нет ответов на вопросы</h3>
+        <div class="empty-top"></div>
+      <% else %>
+        <% @questions.each do |q| %>
+          <%= q.question_text.html_safe %>
+          <i><%= q.name %></i>
+          <p><%= link_to "Смотреть ответ", question_path(q), class: 'button' %></p>
+          <hr>
+        <% end %>
+      <% end %>
+      <% unless user_signed_in? && current_user.admin %>
+        <%= link_to "Задать вопрос", new_question_path, class: 'button' %>
+      <% end %>	
+      <hr>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

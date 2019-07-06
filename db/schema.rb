@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_09_110917) do
+ActiveRecord::Schema.define(version: 2019_04_13_134644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,18 @@ ActiveRecord::Schema.define(version: 2019_03_09_110917) do
     t.string "image"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "question_text"
+    t.text "answer_text"
+    t.boolean "closed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "answerer_id"
+    t.index ["answerer_id"], name: "index_questions_on_answerer_id"
+  end
+
   create_table "texts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -61,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_110917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin"
+    t.string "name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

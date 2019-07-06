@@ -10,7 +10,9 @@
   <div><%= link_to "О храме", about_path %></div>
 <% end %>
 
-<div><%= link_to "Вопросы"%></div>
+<% unless current_page?(controller: 'questions') %>
+  <div><%= link_to "Вопросы", questions_path %></div>
+<% end %>
 
 <% unless current_page?(controller: 'about', action: 'schedule') %>
   <div><%= link_to "Расписание", schedule_path %></div>

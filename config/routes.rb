@@ -21,9 +21,15 @@ Rails.application.routes.draw do
   post '/admin/priests' => 'admin#update_priests'
   get '/admin/schedule' => 'admin#edit_schedule'
   post '/admin/schedule' => 'admin#update_schedule'
+  get '/admin/announcement' => 'admin#edit_announcement'
+  post '/admin/announcement' => 'admin#update_announcement'
+  post '/admin/update_name' => 'admin#update_name'
+
+  get 'questions/unanswered' => 'questions#unanswered'
 
   resources :texts, only: [:show, :update]
   resources :posts
   resources :pictures, only: [:create, :destroy]
   resources :contacts, except: [:destroy, :show]
+  resources :questions
 end

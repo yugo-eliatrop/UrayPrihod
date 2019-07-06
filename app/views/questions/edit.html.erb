@@ -1,0 +1,31 @@
+<%= render 'shared/nav' %>
+
+<div class="empty-top"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="title">Ответить на вопрос</h2>
+      <%= form_for @question do |form| %>
+        <%= render 'shared/errors', object: @question %>
+
+        <div class="block">
+          <%= @question.question_text.html_safe %>
+          <strong><%= @question.name %></strong>
+        </div>
+
+        <%= link_to 'Удалить', question_path(@question), method: :delete, class: 'button button-silver',
+                                                         data: { confirm: 'Удалить вопрос?' }%>
+        <br />
+        <br />
+        <div class="block">
+          <p><strong>Ответ</strong></p>
+          <%= form.trix_editor :answer_text, class: 'editor' %>
+        </div>
+
+        <%= form.submit 'Ответить' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
