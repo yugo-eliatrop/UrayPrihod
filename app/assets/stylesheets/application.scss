@@ -261,6 +261,21 @@ h2 {
 .announcement {
   display: flex;
   justify-content: center;
+
+  figure {
+    text-align: center;
+    display: block;
+
+    figcaption {
+      display: none;
+    }
+  }
+
+  img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .calendar {
@@ -425,7 +440,8 @@ h2 {
     border: 1px solid $light-blue;
     padding: 3px;
     border-radius: 3px;
-    max-width: 100%;
+    max-width: 600px;
+    width: 100%;
     height: auto;
   }
 
