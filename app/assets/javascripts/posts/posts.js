@@ -10,13 +10,13 @@ const postClickHandle = event => {
     album = new Album("album", pics, currentId);
     album.open();
   }
-}
+};
 
 const sortPics = () => {
   let container = document.getElementById("post");
   return[...document.getElementsByTagName("img")]
     .filter(pic => elemBelongsToContainer(pic, container));
-}
+};
 
 const elemBelongsToContainer = (elem, container) => {
   let parent = elem.parentNode;
@@ -26,7 +26,7 @@ const elemBelongsToContainer = (elem, container) => {
     parent = parent.parentNode;
   }
   return false;
-}
+};
 
 class Album {
   constructor(varName, pics, currentId) {

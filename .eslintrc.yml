@@ -4,5 +4,6 @@ env:
 rules:
   "react/prop-types": 'off'
   "semi": [2, "always"]
+parser: "babel-eslint"
 parserOptions:
   "sourceType": "module"
