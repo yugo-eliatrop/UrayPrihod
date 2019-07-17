@@ -36,7 +36,7 @@ class Album {
     this.name = varName;
   }
 
-  open = () => {
+  open() {
     this.modalWrapper = document.createElement("div");
     this.modalWrapper.classList.add("modal-wrapper");
     this.modalWrapper.setAttribute("onclick", `${this.name}.close(event)`);
@@ -62,7 +62,7 @@ class Album {
     showWindow(this.modalWrapper, 150, "flex");
   }
 
-  close = event => {
+  close(event) {
     if (event.target === this.modalWrapper) {
       hideWindow(this.modalWrapper, 150);
       setTimeout(() => {
@@ -72,19 +72,19 @@ class Album {
     }
   }
 
-  prev = () => {
+  prev() {
     this.id--;
     this.id < 0 && (this.id = this.pics.length - 1);
     this.setImage();
   }
 
-  next = () => {
+  next() {
     this.id++;
     this.id === this.pics.length && (this.id = 0);
     this.setImage();
   }
 
-  setImage = () => {
+  setImage() {
     this.modalWrapper.firstElementChild.firstElementChild.src = this.pics[this.id].src;
   }
 }
