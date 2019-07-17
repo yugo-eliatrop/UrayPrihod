@@ -26,5 +26,5 @@ export function createParallax() {
         navbar.classList.contains("colored") || navbar.classList.add("colored");
       }
     }
-  }
+  };
 }

@@ -8,7 +8,7 @@ const showWindow = (elem, ms = 150, display = "block") => {
     opacity >= 1 && clearInterval(show);
     elem.style.opacity = opacity;
   }, ms / 10);
-}
+};
 
 const hideWindow = (elem, ms = 150) => {
   let opacity = 1;
@@ -21,4 +21,4 @@ const hideWindow = (elem, ms = 150) => {
     }
     elem.style.opacity = opacity;
   }, ms / 10);
-}
+};

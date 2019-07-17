@@ -26,7 +26,7 @@ function showHideMenu() {
 
 function setNavStyle() {
   if (window.location.pathname == "/") {
-    let scrolled = window.pageYOffset || document.documentElement.scrollTop
+    let scrolled = window.pageYOffset || document.documentElement.scrollTop;
     let navbar = document.getElementById("navbar");
 
     if (scrolled == 0) {
@@ -50,14 +50,14 @@ function printCalendar() {
     var b = getElementsByClassName(document, 'div', class_name);
     var f = '';
     if (a.image != undefined && a.image) {
-      f = '?image=1'
+      f = '?image=1';
     }
     var g = getData(a.api + '/presentations.json' + f);
     var presentations = g.presentations;
     var inner = '';
     if (g.imgs != undefined) {
       var img = g.imgs[Math.floor(Math.random() * g.imgs.length)];
-      inner = '<div class="days-image">' + img + '</div>'
+      inner = '<div class="days-image">' + img + '</div>';
     }
     for (var key in b) {
       var element = b[key];
@@ -85,7 +85,7 @@ function printCalendar() {
         e.push(g);
       }
     }
-    return (e)
+    return (e);
   }
 
   function createRequest() {
@@ -93,10 +93,10 @@ function printCalendar() {
     if (window.XMLHttpRequest) req = new XMLHttpRequest();
     else if (window.ActiveXObject) {
       try {
-        req = new ActiveXObject('Msxml2.XMLHTTP')
+        req = new ActiveXObject('Msxml2.XMLHTTP');
       } catch (e) { }
       try {
-        req = new ActiveXObject('Microsoft.XMLHTTP')
+        req = new ActiveXObject('Microsoft.XMLHTTP');
       } catch (e) { }
     }
     return req;
