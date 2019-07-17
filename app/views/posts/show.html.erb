@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="container post">
+<div class="container post" onclick="postClickHandle(event)">
   <div class="row">
     <div class="col-12">
       <h2><%= @post.title %></h2>
@@ -27,7 +27,7 @@
     <div class="col-12 first-image">
       <%= image_tag(@post.image.url, alt: 'image') if @post.image? %>
     </div>
-    <div class="col-12 text">
+    <div class="col-12 text" id="post">
       <p><%= @post.content.html_safe %></p>
     </div>
   </div>

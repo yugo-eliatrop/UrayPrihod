@@ -31,6 +31,7 @@ $gray-border: #eaeaea;
 $gray-text: #9f9f9f;
 $gray-icon: #b3b8bb;
 $danger: rgb(163, 22, 22);
+$modal-z-index: 1100;
 
 $main-font: 'Montserrat', sans-serif;
 
@@ -469,6 +470,68 @@ h2 {
       max-width: 600px;
       width: 100%;
       height: auto;
+    }
+  }
+}
+
+.modal-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: $modal-z-index;
+
+  .modal {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    min-height: 100px;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px 10px #222;
+
+    img {
+      max-width: 100%;
+      width: auto;
+      height: -webkit-fill-available;
+    }
+
+    #left-chevron, #right-chevron {
+      position: absolute;
+      height: 100%;
+      width: 30%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+      cursor: pointer;
+      transition: .3s;
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+        background: rgba(255, 255, 255, .2);
+      }
+    }
+
+    #left-chevron {
+      left: 0;
+    }
+
+    #right-chevron {
+      right: 0;
     }
   }
 }
