@@ -35,6 +35,10 @@ $modal-z-index: 1100;
 
 $main-font: 'Montserrat', sans-serif;
 
+.empty-container {
+  min-height: calc(100vh - 380px);
+}
+
 .glass {
   border-bottom: 1px solid #6b8aad;
 }
