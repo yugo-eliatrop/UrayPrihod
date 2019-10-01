@@ -18,7 +18,7 @@
         </div>
         <div class="description">
           <h2><%= link_to post.title, post_path(post) %></h2>
-          <time><%= post.created_at.to_date.strftime("%d %B %Y") %></time>
+          <%#<time><%= post.created_at.to_date.strftime("%d %B %Y") %><%#/time%>
           <p><%= post.description.html_safe %></p>
           <div class="button-wrapper">
             <%= link_to "Читать", post_path(post), class: "button" %>
