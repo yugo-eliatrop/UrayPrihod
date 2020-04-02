@@ -6,6 +6,10 @@
   <div><%= link_to "Новости", posts_path %></div>
 <% end %>
 
+<% unless current_page?(controller: 'notes') %>
+  <div><%= link_to "Записки онлайн", notes_path %></div>
+<% end %>
+
 <% unless current_page?(controller: 'about') %>
   <div><%= link_to "О храме", about_path %></div>
 <% end %>

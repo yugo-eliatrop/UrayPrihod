@@ -1,0 +1,36 @@
+<%= render 'shared/nav' %>
+<div class="empty-top"></div>
+
+<div class="container">
+  <div class="row title">
+    <h2>Братья и сестры!</h2>
+  </div>
+  <div class="row">
+    <p style="text-align: justify">
+      Сайт храма Рождества Пресвятой Богородицы г.Урай принимает записки онлайн бесплатно.
+      Это наиболее актуально в связи с карантинными мероприятиями. Святая Церковь будет продолжать богослужения, а вам благословляет молиться дома.
+    </p>
+    <p style="text-align: justify">На поминовение можно подавать имена только крещенных православных христиан.</p>
+  </div>
+  <%= form_with(url: notes_path, method: :post) do %>
+    <div class="row">
+      <div class="col-md-4">
+        <h4 style="text-align: center">О здравии</h4>
+        <%= text_area_tag('notes[alive]', nil, class: 'note-field') %>
+      </div>
+      <div class="col-md-4">
+        <h4 style="text-align: center">Об упокоении</h4>
+        <%= text_area_tag('notes[dead]', nil, class: 'note-field') %>
+      </div>
+      <div class="col-md-4">
+        <h4 style="text-align: center">Врачу душ и телес</h4>
+        <%= text_area_tag('notes[to_doctor]', nil, class: 'note-field') %>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center; padding: 20px">
+      <%= submit_tag("Отправить", class: 'button button-gold') %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/footer' %>

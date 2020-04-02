@@ -1,3 +1,5 @@
+require 'zip'
+
 class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :check_rights
@@ -91,5 +93,24 @@ class AdminController < ApplicationController
     else
       redirect_to edit_user_registration_path
     end
+  end
+
+  def download_notes
+    zip_path = 'notes/notes.zip'
+    File.delete(zip_path) if File.exist?(zip_path)
+    zip_file = File.new(zip_path, 'w')
+    Zip::File.open(zip_file.path, Zip::File::CREATE) do |zip|
+      zip.add('О здравии', 'notes/alive.txt')
+      zip.add('О упокоении', 'notes/dead.txt')
+      zip.add('Врачу душ и телес', 'notes/to_doctor.txt')
+    end
+    send_file zip_file
+  end
+
+  def clear_notes
+    %w[alive dead to_doctor].each do |name|
+      File.open("notes/#{name}.txt", 'w') { |file| file.truncate(0) }
+    end
+    redirect_to admin_path
   end
 end

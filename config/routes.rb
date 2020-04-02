@@ -24,8 +24,14 @@ Rails.application.routes.draw do
   get '/admin/announcement' => 'admin#edit_announcement'
   post '/admin/announcement' => 'admin#update_announcement'
   post '/admin/update_name' => 'admin#update_name'
+  get '/admin/download_notes' => 'admin#download_notes'
+  get '/admin/clear_notes' => 'admin#clear_notes'
 
   get 'questions/unanswered' => 'questions#unanswered'
+
+  get 'notes' => 'notes#index'
+  post 'notes' => 'notes#send_notes'
+  get 'notes/success_page' => 'notes#success_page'
 
   resources :texts, only: [:show, :update]
   resources :posts
