@@ -19,7 +19,7 @@ class NotesController < ApplicationController
 
   def write_to_file(text, key)
     return if text.length.zero?
-    t = text.split(/\s+|\n+/).join("\n")
+    t = text.split(/\s+/).join("\s")
     File.open("notes/#{key}.txt", 'a') { |f| f.write("#{t}\n") }
   end
 
