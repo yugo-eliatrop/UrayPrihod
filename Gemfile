@@ -38,7 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
 gem 'trix-rails', require: 'trix'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'file_validators'
 gem 'bootstrap', '~> 4.2.1'
 gem 'webpacker', '>= 4.0.x'
